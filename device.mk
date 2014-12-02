@@ -17,7 +17,12 @@ endif
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/fstab.m7c:recovery/root/fstab.m7cdwg
+    $(LOCAL_PATH)/recovery/etc/fstab.m7c:recovery/root/fstab.m7cdwg \
+    $(LOCAL_PATH)/recovery/etc/init.recovery.m7c.rc:root/init.recovery.m7cdwg.rc \
+    $(LOCAL_PATH)/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
+    $(LOCAL_PATH)/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
+    $(LOCAL_PATH)/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
+    $(LOCAL_PATH)/recovery/sbin/power_test:recovery/root/sbin/power_test
 
 $(call inherit-product, build/target/product/full.mk)
 
